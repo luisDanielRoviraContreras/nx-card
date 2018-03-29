@@ -1,14 +1,20 @@
 <template>
-   <a class="card" href="#">
-      <h2>{{ title }}</h2>
-      <p>{{ description }}</p>
-      <img :src="image">
+   <a class="card" :href="url">
+      <h2>
+        <slot name="title"></slot>
+      </h2>
+      <p>
+        <slot name="description"></slot>
+      </p>
+      <div class="icon">
+        <slot name="image"></slot>
+      </div>
     </a>
 </template>
 
 <script>
 export default {
-  props: ["title", "image", "description"]
+  props: ["url"]
 };
 </script>
 
@@ -39,6 +45,7 @@ a:hover {
   cursor: pointer;
   background-color: #fff;
   border-radius: 4px;
+  opacity: box-shadow .8;
   box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
   transition-property: color, background-color, box-shadow, transform;
   transition-duration: 0.15s;
@@ -59,8 +66,8 @@ a:hover {
   content: " \279C";
 }
 
-.card > svg,
-.card > img {
+
+.icon img, .icon svg {
   position: absolute;
   width: 130px;
   height: 130px;

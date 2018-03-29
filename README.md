@@ -30,8 +30,6 @@ import NxCard from 'nx-card'
 Vue.use(NxCard)
 ```
 
-**⚠️ A css file is included when importing the package. You may have to setup your bundler to embed the css in your page.**
-
 ## Distribution import
 
 Install all the components:
@@ -42,8 +40,6 @@ import NxCard from 'nx-card/dist/nx-card.common'
 
 Vue.use(NxCard)
 ```
-
-**⚠️ You may have to setup your bundler to embed the css file in your page.**
 
 ## Browser
 
@@ -66,13 +62,12 @@ Vue.use(NxCard)
 In the template, use the `nx-card` directive:
 
 ```vue
-<nx-card	
-title="Lorem ipsum dolor sit amet."
-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi eveniet, iusto, exercitationem maxime sit molestias dolor mollitia quo voluptate libero optio, nihil molestiae voluptatem rem."
-image="src/image.png"></nx-card>
+<nx-card url="https://vuejs.org">
+  <template slot="title">Lorem ipsum dolor sit.</template>
+  <template slot="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam voluptate exercitationem odit neque optio quos soluta illum earum nulla molestiae.</template>
+  <template slot="image">
+    <img src="http://nx-card.surge.sh/logo.png">
+  </template>
+</nx-card>
          
 ```
-
-## License
-
-[MIT](http://opensource.org/licenses/MIT)
