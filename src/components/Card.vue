@@ -1,5 +1,8 @@
 <template>
-   <a class="card" :href="url">
+   <a
+    v-bind="$attrs"
+    v-on="$listeners"
+    class="card" >
       <h2>
         <slot name="title"></slot>
       </h2>
@@ -13,9 +16,7 @@
 </template>
 
 <script>
-export default {
-  props: ["url"]
-};
+export default {};
 </script>
 
 <style scoped>
